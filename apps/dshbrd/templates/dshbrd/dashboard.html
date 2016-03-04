@@ -7,7 +7,7 @@ Hello {{ user }}!
 
 <br>
 <ol>
-    Your Trip Schedules
+    <h2>Your Trip Schedules<h2>
     {% for trip in tripschdl %}
 
         {% for i in trip.destination_id.all %}
@@ -18,7 +18,7 @@ Hello {{ user }}!
 </ol>
 <br>
 <ol>
-    Other User's Travel Plan
+    <h2>Other User's Travel Plan<h2>
     {% for trip in tripschdl %}
 
         {% for i in trip.destination_id.all %}
