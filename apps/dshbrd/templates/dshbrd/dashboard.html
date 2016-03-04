@@ -1,0 +1,32 @@
+<a href="{% url 'accounts-logout' %}"> Logout </a>
+
+<h1> Travel Dashboard!</h1>
+
+<br>
+Hello {{ user }}!
+
+<br>
+<ol>
+    Your Trip Schedules
+    {% for trip in tripschdl %}
+
+        {% for i in trip.destination_id.all %}
+            <li><a href="{% url 'trip-detail' i.id %}"> {{ i.destination }} </a> </li>
+        {% endfor %}
+
+    {% endfor %}
+</ol>
+<br>
+<ol>
+    Other User's Travel Plan
+    {% for trip in tripschdl %}
+
+        {% for i in trip.destination_id.all %}
+            <li>{{ i.destination }}</li>
+        {% endfor %}
+
+    {% endfor %}
+</ol>
+<br>
+<a href="{% url 'destination-create' %}"> Add Item </a>
+
